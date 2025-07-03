@@ -1,0 +1,107 @@
+[
+  {
+    "id": "route1",
+    "name": "西湖十景经典环线",
+    "tags": ["citywalk", "自然", "古风/历史"],
+    "spots": [
+	  {"id": "duanqiao", "name": "断桥", "latitude": 30.258106, "longitude": 120.151299},
+      {"id": "liulangwenying", "name": "柳浪闻莺", "latitude": 30.240389, "longitude": 120.156326},
+      {"id": "leifengta", "name": "雷峰塔", "latitude": 30.230934, "longitude": 120.148849}
+    ],
+    "segments": [
+      {
+      "start": {"longitude": 120.151299, "latitude": 30.258106},
+      "end": {"longitude": 120.156326, "latitude": 30.240389}
+      },
+      {
+      "start": {"longitude": 120.156326, "latitude": 30.240389},
+      "end": {"longitude": 120.148849, "latitude": 30.230934}
+      }
+    ],
+    "description": "全程6公里，建议步行+游船组合游览"
+  },
+  {
+    "id": "route2",
+    "name": "运河文化深度游",
+    "tags": ["citywalk", "古风/历史"],
+    "spots": [
+	  {"id": "xiaohezhijie", "name": "小河直街", "latitude": 30.3083, "longitude": 120.135337},
+      {"id": "gongchenqiao", "name": "拱宸桥", "latitude": 30.318101, "longitude": 120.139844},
+      {"id": "jinghangdayunhebowuguan", "name": "京杭大运河博物馆", "latitude": 30.317404, "longitude": 120.14133}
+    ],
+    "segments": [
+      {
+        "start": {"longitude": 120.135337, "latitude": 30.3083},
+        "end": {"longitude": 120.139844, "latitude": 30.318101}
+      },
+      {
+        "start": {"longitude": 120.139844, "latitude": 30.318101},
+        "end": {"longitude": 120.14133, "latitude": 30.317404}
+      }
+    ],
+    "description": "体验运河文化与水乡风情"
+  },
+  {
+    "id": "route3",
+    "name": "茶禅一日体验",
+    "tags": ["自然", "晴天"],
+    "spots": [
+      {"id": "longjingcun", "name": "龙井村茶园", "latitude": 30.218481, "longitude": 120.106683},
+      {"id": "chinateamuseum", "name": "中国茶叶博物馆", "latitude": 30.232381, "longitude": 120.120532},
+	  {"id": "lingyinsi", "name": "灵隐寺", "latitude": 30.240826, "longitude": 120.101406}
+    ],
+    "segments": [
+      {
+        "start": {"longitude": 120.106683, "latitude": 30.218481},
+        "end": {"longitude": 120.120532, "latitude": 30.232381}
+      },
+      {
+        "start": {"longitude": 120.120532, "latitude": 30.232381},
+        "end": {"longitude": 120.101406, "latitude": 30.240826}
+      }
+    ],
+    "highlight": "在龙井村体验采茶"
+  },
+  {
+    "id": "route4",
+    "name": "南宋文化巡礼",
+    "tags": ["古风/历史", "博物馆"],
+    "spots": [
+      {"id": "nansongyujie", "name": "南宋御街", "latitude": 30.240249, "longitude": 120.169526},
+      {"id": "hefangjie", "name": "河坊街", "latitude": 30.2401, "longitude": 120.16863},
+      {"id": "hangzhoubowuguan", "name": "杭州博物馆", "latitude": 30.239091, "longitude": 120.166525}
+    ],
+    "segments": [
+      {
+        "start": {"longitude": 120.169526, "latitude": 30.240249},
+        "end": {"longitude": 120.16863, "latitude": 30.2401}
+      },
+      {
+        "start": {"longitude": 120.16863, "latitude": 30.2401},
+        "end": {"longitude": 120.166525, "latitude": 30.239091}
+      }
+    ],
+    "tip": "建议穿着汉服体验更佳"
+  },
+  {
+    "id": "route5",
+    "name": "自然生态徒步",
+    "tags": ["自然", "晴天"],
+    "spots": [
+      {"id": "jiuxiyanshutubuxian", "name": "九溪烟树徒步线", "latitude": 30.202444, "longitude": 120.113383},
+      {"id": "yunxizhujing", "name": "云栖竹径", "latitude": 30.189233, "longitude": 120.087147},
+      {"id": "qingshanhu", "name": "青山湖奇幻水森林", "latitude": 30.251453, "longitude": 119.763946}
+    ],
+    "segments": [
+      {
+        "start": {"longitude": 120.113383, "latitude": 30.202444},
+        "end": {"longitude": 120.087147, "latitude": 30.189233}
+      },
+      {
+        "start": {"longitude": 120.087147, "latitude": 30.189233},
+        "end": {"longitude": 119.763946, "latitude": 30.251453}
+      }
+    ],
+    "equipment": "建议穿防滑鞋"
+  }
+]

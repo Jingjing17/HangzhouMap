@@ -1,0 +1,802 @@
+[
+    {
+        "id": "xihu",
+        "name": "西湖",
+        "latitude": 30.222724,
+        "longitude": 120.121288,
+        "tags": ["自然", "春", "夏", "秋", "冬", "citywalk", "拍摄", "古风/历史"],
+        "description": "中国著名淡水湖，杭州城市名片，集自然景观与历史文化于一体，四季皆有不同景致。",
+        "icon": "icon/xihu.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "xixiwetland",
+        "name": "西溪湿地",
+        "latitude": 30.255079,
+        "longitude": 120.061159,
+        "tags": ["自然", "夏", "citywalk", "拍摄", "雨天"],
+        "description": "城市中的天然湿地，以河港、沼泽为特色，夏季荷花盛开，是生态观光与休闲的好去处。",
+        "icon": "icon/xixiwetland.png",
+        "openHours": "8:30-17:30（12月-2月提前至17:00闭园）"
+    },
+    {
+        "id": "qiandaohu",
+        "name": "千岛湖",
+        "latitude": 29.594386,
+        "longitude": 119.013097,
+        "tags": ["自然", "拍摄", "晴天"],
+        "description": "拥有千座岛屿的人工湖，湖水清澈，岛屿星罗棋布，是度假观光和水上活动的理想场所。",
+        "icon": "icon/qiandaohu.png",
+        "openHours": "8:00-17:00（旺季3-11月），8:30-16:30（淡季12-2月）"
+    },
+    {
+        "id": "qingshanhu",
+        "name": "青山湖奇幻水森林",
+        "latitude": 30.251453,
+        "longitude": 119.763946,
+        "tags": ["自然", "夏", "晴天"],
+        "description": "以水上池杉林为特色的生态景区，夏季绿树倒映湖面，适合避暑与摄影。",
+        "icon": "icon/qingshanhu.png",
+        "openHours": "8:00-17:00"
+    },
+    {
+        "id": "yunxizhujing",
+        "name": "云栖竹径",
+        "latitude": 30.189233,
+        "longitude": 120.087147,
+        "tags": ["自然", "秋"],
+        "description": "以竹林景观为特色的景区，秋季竹林与红枫相映，环境清幽，是赏秋佳地。",
+        "icon": "icon/yunxizhujing.png",
+        "openHours": "7:30-17:30"
+    },
+    {
+        "id": "liulangwenying",
+        "name": "柳浪闻莺",
+        "latitude": 30.240389,
+        "longitude": 120.156326,
+        "tags": ["自然", "春"],
+        "description": "西湖边以柳树和黄莺为特色的公园，春季柳丝飘逸，莺啼婉转，充满生机。",
+        "icon": "icon/liulangwenying.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "taiziwanpark",
+        "name": "太子湾公园",
+        "latitude": 30.22547,
+        "longitude": 120.142177,
+        "tags": ["自然", "春", "拍摄"],
+        "description": "以郁金香和樱花闻名的公园，春季花卉盛开，是杭州热门的赏花胜地。",
+        "icon": "icon/taiziwanpark.png",
+        "openHours": "8:00-17:00（3-11月），8:30-16:30（12-2月）"
+    },
+    {
+        "id": "gushanpark",
+        "name": "孤山公园",
+        "latitude": 30.251654,
+        "longitude": 120.142481,
+        "tags": ["自然", "冬", "古风/历史"],
+        "description": "西湖中唯一的天然岛屿，历史文化遗迹丰富，冬季雪景尤为著名。",
+        "icon": "icon/gushanpark.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "duanqiao",
+        "name": "断桥",
+        "latitude": 30.258106,
+        "longitude": 120.151299,
+        "tags": ["自然", "冬"],
+        "description": "西湖著名古桥，因许仙与白娘子的传说闻名，冬季雪后桥面若隐若现，形成“断桥残雪”景观。",
+        "icon": "icon/duanqiao.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "baoshishan",
+        "name": "宝石山",
+        "latitude": 30.259804,
+        "longitude": 120.140608,
+        "tags": ["自然", "冬"],
+        "description": "西湖边的丘陵，山体多红色岩石，冬季登临可俯瞰西湖雪景，是杭州登高观景胜地。",
+        "icon": "icon/baoshishan.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "xilingyinshe",
+        "name": "西泠印社",
+        "latitude": 30.250279,
+        "longitude": 120.139948,
+        "tags": ["自然", "古风/历史", "雨天"],
+        "description": "中国著名金石篆刻研究机构，位于孤山西麓，园林建筑与人文景观交融，雨天更显雅致。",
+        "icon": "icon/xilingyinshe.png",
+        "openHours": "8:00-17:00"
+    },
+    {
+        "id": "santanyinyue",
+        "name": "三潭印月",
+        "latitude": 30.238845,
+        "longitude": 120.145369,
+        "tags": ["自然", "古风/历史"],
+        "description": "西湖中人工建造的岛群，以“三潭印月”石刻和中秋赏月闻名，是西湖文化景观的重要组成部分。",
+        "icon": "icon/santanyinyue.png",
+        "openHours": "8:00-17:00（需乘船抵达，船班随季节调整）"
+    },
+    {
+        "id": "hubinyintai",
+        "name": "湖滨银泰in77",
+        "latitude": 30.251068,
+        "longitude": 120.164759,
+        "tags": ["城市"],
+        "description": "杭州核心商圈的大型购物中心，集购物、餐饮、娱乐于一体，紧邻西湖，交通便利。",
+        "icon": "icon/hubinyintai.png",
+        "openHours": "10:00-22:00"
+    },
+    {
+        "id": "hefangjie",
+        "name": "河坊街",
+        "latitude": 30.2401,
+        "longitude": 120.16863,
+        "tags": ["城市", "citywalk", "古风/历史", "杭州小吃"],
+        "description": "杭州历史文化街区，保留明清建筑风格，汇聚传统手工艺品和杭州特色小吃，充满市井气息。",
+        "icon": "icon/hefangjie.png",
+        "openHours": "全天开放（商铺9:00-22:00）"
+    },
+    {
+        "id": "nansongyujie",
+        "name": "南宋御街",
+        "latitude": 30.240249,
+        "longitude": 120.169526,
+        "tags": ["城市", "citywalk", "古风/历史"],
+        "description": "南宋都城的中轴线，如今是历史文化街区，石板路与古建筑相映，展现南宋风情。",
+        "icon": "icon/nansongyujie.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "beishan street",
+        "name": "北山街",
+        "latitude": 30.256066,
+        "longitude": 120.144568,
+        "tags": ["城市", "citywalk"],
+        "description": "西湖边的历史文化街区，沿路保留众多民国建筑，适合漫步赏景，感受杭州慢生活。",
+        "icon": "icon/beishanstreet.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "xiaohezhijie",
+        "name": "小河直街",
+        "latitude": 30.3083,
+        "longitude": 120.135337,
+        "tags": ["城市", "citywalk"],
+        "description": "京杭大运河畔的历史街区，保留传统民居和手工艺作坊，展现杭州水乡风情。",
+        "icon": "icon/xiaohezhijie.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "gongchenqiao",
+        "name": "拱宸桥",
+        "latitude": 30.318101,
+        "longitude": 120.139844,
+        "tags": ["城市", "古风/历史", "citywalk"],
+        "description": "京杭大运河上的标志性古桥，桥畔有多个博物馆和历史建筑，是运河文化的重要节点。",
+        "icon": "icon/gongchenqiao.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "qianjiangyanighttour",
+        "name": "钱塘江夜游",
+        "latitude": 30.211689,
+        "longitude": 120.200852,
+        "tags": ["城市"],
+        "description": "乘坐游船欣赏钱塘江夜景，沿途可观赏城市灯光秀和江堤景观，感受杭州的都市魅力。",
+        "icon": "icon/qianjiangyanighttour.png",
+        "openHours": "18:30-21:00（具体船班需查询）"
+    },
+    {
+        "id": "wulinyeshi",
+        "name": "武林夜市",
+        "latitude": 30.261664,
+        "longitude": 120.159572,
+        "tags": ["城市", "杭州小吃"],
+        "description": "杭州繁华的夜市街区，汇聚各地特色小吃和小商品，是体验杭州夜生活的好去处。",
+        "icon": "icon/wulinyeshi.png",
+        "openHours": "17:00-24:00"
+    },
+    {
+        "id": "songcheng",
+        "name": "宋城",
+        "latitude": 30.169795,
+        "longitude": 120.098741,
+        "tags": ["城市"],
+        "description": "以宋代文化为主题的大型景区，可观看《宋城千古情》等演出，体验宋代市井生活。",
+        "icon": "icon/songcheng.png",
+        "openHours": "9:00-21:30（演出时间以当日安排为准）"
+    },
+    {
+        "id": "mengxiangxiaozhen",
+        "name": "梦想小镇",
+        "latitude": 30.290077,
+        "longitude": 120.002426,
+        "tags": ["城市"],
+        "description": "集创业、休闲、旅游于一体的特色小镇，建筑风格融合传统与现代，适合文创产业体验。",
+        "icon": "icon/mengxiangxiaozhen.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "nanshanstreet",
+        "name": "南山路",
+        "latitude": 30.241375,
+        "longitude": 120.158902,
+        "tags": ["城市", "citywalk"],
+        "description": "西湖边的文化艺术街区，沿路有美术馆、咖啡馆和历史建筑，充满文艺气息。",
+        "icon": "icon/nanshanstreet.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "lingyinsi",
+        "name": "灵隐寺",
+        "latitude": 30.240826,
+        "longitude": 120.101406,
+        "tags": ["拍摄", "秋", "冬", "古风/历史"],
+        "description": "中国佛教名寺，始建于东晋，寺内古刹庄严，秋季银杏金黄，冬季雪景静谧，文化底蕴深厚。",
+        "icon": "icon/lingyinsi.png",
+        "openHours": "7:30-18:00（3-10月），7:30-17:30（11-2月）"
+    },
+    {
+        "id": "leifengta",
+        "name": "雷峰塔",
+        "latitude": 30.230934,
+        "longitude": 120.148849,
+        "tags": ["拍摄", "古风/历史", "晴天"],
+        "description": "西湖标志性建筑，因白娘子传说闻名，登塔可俯瞰西湖全景，晴天视野尤为开阔。",
+        "icon": "icon/leifengta.png",
+        "openHours": "8:00-20:30（旺季），8:00-17:30（淡季）"
+    },
+    {
+        "id": "liuheta",
+        "name": "六和塔",
+        "latitude": 30.196338,
+        "longitude": 120.131487,
+        "tags": ["拍摄", "古风/历史"],
+        "description": "始建于北宋的古塔，矗立钱塘江边，登塔可俯瞰江景与城市风光，建筑风格古朴典雅。",
+        "icon": "icon/liuheta.png",
+        "openHours": "7:00-18:00（6-9月），7:30-17:30（其他月份）"
+    },
+    {
+        "id": "guozhuang",
+        "name": "郭庄",
+        "latitude": 30.243918,
+        "longitude": 120.132267,
+        "tags": ["拍摄", "古风/历史"],
+        "description": "杭州保存完好的古典私家园林，以水为景，建筑精巧，是江南园林艺术的典范，适合摄影创作。",
+        "icon": "icon/guozhuang.png",
+        "openHours": "8:00-17:00"
+    },
+    {
+        "id": "liangzhugucheng",
+        "name": "良渚古城遗址",
+        "latitude": 30.389563,
+        "longitude": 119.990995,
+        "tags": ["拍摄", "秋", "古风/历史"],
+        "description": "新石器时代晚期的古城遗址，展现了5000年前的良渚文明，秋季草木金黄，适合考古文化探索。",
+        "icon": "icon/liangzhugucheng.png",
+        "openHours": "9:00-17:00（16:30停止入园）"
+    },
+    {
+        "id": "maojiabu",
+        "name": "茅家埠",
+        "latitude": 30.240023,
+        "longitude": 120.128085,
+        "tags": ["拍摄"],
+        "description": "西湖边的湿地景观，水域开阔，芦苇丛生，是鸟类栖息和摄影爱好者的天堂，环境幽静。",
+        "icon": "icon/maojiabu.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "wuguitan",
+        "name": "乌龟潭",
+        "latitude": 30.232185,
+        "longitude": 120.133476,
+        "tags": ["拍摄"],
+        "description": "西湖西侧的静谧水潭，因潭中龟形岩石得名，周围山林环绕，是小众摄影和写生的好去处。",
+        "icon": "icon/wuguitan.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "yinghuarundao",
+        "name": "樱花跑道",
+        "latitude": 30.19145,
+        "longitude": 120.150079,
+        "tags": ["拍摄", "春"],
+        "description": "钱江新城沿钱塘江的樱花观赏道，春季樱花盛开，与城市天际线相映，是网红打卡地。",
+        "icon": "icon/yinghuarundao.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "huxueyanjiuju",
+        "name": "胡雪岩旧居",
+        "latitude": 30.237273,
+        "longitude": 120.172906,
+        "tags": ["拍摄", "古风/历史"],
+        "description": "清末红顶商人胡雪岩的宅邸，建筑融合中西风格，雕刻精美，是晚清民居建筑的代表作。",
+        "icon": "icon/huxueyanjiuju.png",
+        "openHours": "8:00-17:00（16:30停止售票）"
+    },
+    {
+        "id": "wenlange",
+        "name": "文澜阁",
+        "latitude": 30.250473,
+        "longitude": 120.142859,
+        "tags": ["古风/历史"],
+        "description": "清代皇家藏书楼，是《四库全书》的珍藏地之一，建筑风格典雅，展现中国传统藏书文化。",
+        "icon": "icon/wenlange.png",
+        "openHours": "9:00-17:00（周一闭馆，随浙江省博物馆开放时间）"
+    },
+    {
+        "id": "yongfusi",
+        "name": "永福寺",
+        "latitude": 30.238978,
+        "longitude": 120.097524,
+        "tags": ["拍摄", "古风/历史"],
+        "description": "灵隐寺旁的千年古刹，寺内建筑依山而建，环境清幽，适合静心参观和拍摄古建筑细节。",
+        "icon": "icon/yongfusi.png",
+        "openHours": "7:30-18:00"
+    },
+    {
+        "id": "fuyangshoujiangcun",
+        "name": "杭州富阳受降村银杏",
+        "latitude": 30.136613,
+        "longitude": 119.956312,
+        "tags": ["秋"],
+        "description": "富阳受降村的银杏林，秋季银杏叶金黄灿烂，是杭州周边赏秋的热门地点，适合家庭出游。",
+        "icon": "icon/fuyangshoujiangcun.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "quyuanfenghe",
+        "name": "曲院风荷",
+        "latitude": 30.24824,
+        "longitude": 120.133848,
+        "tags": ["夏"],
+        "description": "西湖著名景点，以夏季荷花盛开和曲酒酿造历史闻名，荷香与酒香交融，是避暑赏荷佳地。",
+        "icon": "icon/quyuanfenghe.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "hangzhouhuapu",
+        "name": "杭州花圃",
+        "latitude": 30.245663,
+        "longitude": 120.127654,
+        "tags": ["春"],
+        "description": "以花卉栽培和展示为特色的公园，春季百花齐放，是杭州本地居民踏青赏花的好去处，环境优美。",
+        "icon": "icon/hangzhouhuapu.png",
+        "openHours": "8:00-17:00"
+    },
+    {
+        "id": "jiuxiyanshutubuxian",
+        "name": "九溪烟树徒步线",
+        "latitude": 30.202444,
+        "longitude": 120.113383,
+        "tags": ["citywalk"],
+        "description": "九溪十八涧的核心徒步路线，沿途溪流、茶园、山林交织，适合户外爱好者，终点可至龙井村。",
+        "icon": "icon/jiuxiyanshutubuxian.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "zhejiangmuseum",
+        "name": "浙江省博物馆",
+        "latitude": 30.251243,
+        "longitude": 120.143778,
+        "tags": ["博物馆"],
+        "description": "浙江省最大的综合性博物馆，馆藏丰富，展示浙江历史文化和自然遗产，文物展览体系完整。",
+        "icon": "icon/zhejiangmuseum.png",
+        "openHours": "9:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "liangzhubowuyuan",
+        "name": "良渚博物院",
+        "latitude": 30.377474,
+        "longitude": 120.028083,
+        "tags": ["博物馆"],
+        "description": "以良渚文化为主题的专题博物馆，系统展示良渚古城遗址和5000年前的古代文明，展览形式现代。",
+        "icon": "icon/liangzhubowuyuan.png",
+        "openHours": "9:00-17:00（16:30停止入园，周一闭馆）"
+    },
+    {
+        "id": "hangzhoubowuguan",
+        "name": "杭州博物馆",
+        "latitude": 30.239091,
+        "longitude": 120.166525,
+        "tags": ["博物馆"],
+        "description": "展示杭州城市历史与文化的综合性博物馆，展品涵盖从新石器时代到近现代的杭州发展历程。",
+        "icon": "icon/hangzhoubowuguan.png",
+        "openHours": "9:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "chinasilkmuseum",
+        "name": "中国丝绸博物馆",
+        "latitude": 30.22287,
+        "longitude": 120.151292,
+        "tags": ["博物馆"],
+        "description": "全国性的丝绸专业博物馆，展示中国丝绸文化的悠久历史和精湛技艺，设有古代和现代丝绸展厅。",
+        "icon": "icon/chinasilkmuseum.png",
+        "openHours": "9:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "jinghangdayunhebowuguan",
+        "name": "京杭大运河博物馆",
+        "latitude": 30.317404,
+        "longitude": 120.14133,
+        "tags": ["博物馆"],
+        "description": "以京杭大运河为主题的专题博物馆，展示运河的历史沿革、文化内涵和水利工程，位于拱宸桥畔。",
+        "icon": "icon/jinghangdahdayunhebowuguan.png",
+        "openHours": "9:00-16:30（周一闭馆）"
+    },
+    {
+        "id": "chinawetlandmuseum",
+        "name": "中国湿地博物馆",
+        "latitude": 30.264153,
+        "longitude": 120.087533,
+        "tags": ["博物馆"],
+        "description": "以湿地为主题的国家级博物馆，展示湿地生态系统和生物多样性，兼具科普教育与展示功能。",
+        "icon": "icon/chinawetlandmuseum.png",
+        "openHours": "9:00-16:30（周一闭馆）"
+    },
+    {
+        "id": "chinateamuseum",
+        "name": "中国茶叶博物馆",
+        "latitude": 30.232381,
+        "longitude": 120.120532,
+        "tags": ["博物馆", "雨天"],
+        "description": "以茶文化为主题的专题博物馆，展示中国茶叶的历史、制作工艺和品饮文化，位于龙井村附近。",
+        "icon": "icon/chinateamuseum.png",
+        "openHours": "9:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "xihubowuguan",
+        "name": "西湖博物馆",
+        "latitude": 30.241739,
+        "longitude": 120.157449,
+        "tags": ["博物馆"],
+        "description": "以西湖为主题的专题博物馆，展示西湖的自然形成、历史演变和文化内涵，位于西湖边。",
+        "icon": "icon/xihubowuguan.png",
+        "openHours": "9:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "hangzhounationalversionmuseum",
+        "name": "杭州国家版本馆",
+        "latitude": 30.381878,
+        "longitude": 120.016028,
+        "tags": ["博物馆"],
+        "description": "集版本收藏、展示、研究于一体的文化场馆，收藏各类珍贵版本资源，建筑风格融合传统与现代。",
+        "icon": "icon/hangzhounationalversionmuseum.png",
+        "openHours": "9:00-17:00（周一闭馆，需预约）"
+    },
+    {
+        "id": "nansongguanyaomuseum",
+        "name": "南宋官窑博物馆",
+        "latitude": 30.209606,
+        "longitude": 120.155048,
+        "tags": ["博物馆"],
+        "description": "以南宋官窑为主题的专题博物馆，展示南宋官窑的历史、制瓷工艺和代表性瓷器，设有古窑遗址。",
+        "icon": "icon/nansongguanyaomuseum.png",
+        "openHours": "8:30-16:30（周一闭馆）"
+    },
+    {
+        "id": "cafa",
+        "name": "中国美术学院南山校区",
+        "latitude": 30.243231,
+        "longitude": 120.160486,
+        "tags": ["美术馆"],
+        "description": "中国顶尖美术院校的校区，校园建筑充满艺术气息，设有多个美术馆，定期举办艺术展览。",
+        "icon": "icon/cafa.png",
+        "openHours": "校园开放时间需参考学校规定，美术馆9:00-17:00"
+    },
+    {
+        "id": "zhejiangartmuseum",
+        "name": "浙江美术馆",
+        "latitude": 30.231049,
+        "longitude": 120.156894,
+        "tags": ["美术馆"],
+        "description": "浙江省规模最大的专业美术馆，收藏和展示中外美术作品，展览内容丰富，学术性强。",
+        "icon": "icon/zhejiangartmuseum.png",
+        "openHours": "9:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "hengluartmuseum",
+        "name": "恒庐美术馆",
+        "latitude": 30.241598,
+        "longitude": 120.158657,
+        "tags": ["美术馆"],
+        "description": "位于南山路的民营美术馆，以展示中国传统书画和当代艺术为主，展览风格精致小众。",
+        "icon": "icon/hengluartmuseum.png",
+        "openHours": "10:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "quanshanshiartcenter",
+        "name": "全山石艺术中心",
+        "latitude": 30.165982,
+        "longitude": 120.10567,
+        "tags": ["美术馆"],
+        "description": "以油画艺术为特色的艺术中心，收藏和展示全山石先生的作品及中外油画精品，学术氛围浓厚。",
+        "icon": "icon/quanshanshiartcenter.png",
+        "openHours": "10:00-17:00（周一闭馆）"
+    },
+    {
+        "id": "hangzhoupolyartcenter",
+        "name": "杭州宝龙艺术中心",
+        "latitude": 30.187166,
+        "longitude": 120.167226,
+        "tags": ["美术馆"],
+        "description": "商业综合体中的当代艺术中心，举办各类先锋艺术展览和文化活动，贴近都市生活。",
+        "icon": "icon/hangzhoupolyartcenter.png",
+        "openHours": "10:00-21:00"
+    },
+    {
+        "id": "damalong",
+        "name": "大马弄",
+        "latitude": 30.234203,
+        "longitude": 120.169086,
+        "tags": ["杭州小吃"],
+        "description": "杭州老城区的传统街巷，以早市闻名，汇聚本地特色小吃和新鲜食材，充满市井生活气息。",
+        "icon": "icon/damalong.png",
+        "openHours": "全天开放（早市为主）"
+    },
+    {
+        "id": "wuliuxiang",
+        "name": "五柳巷",
+        "latitude": 30.242162,
+        "longitude": 120.176615,
+        "tags": ["杭州小吃"],
+        "description": "保留杭州传统民居的历史街区，巷内有多家老字号小吃店，适合品尝地道杭州美食，环境古朴。",
+        "icon": "icon/wuliuxiang.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "zhedafuluojie",
+        "name": "浙大堕落街",
+        "latitude": 30.308972,
+        "longitude": 120.096739,
+        "tags": ["杭州小吃"],
+        "description": "浙江大学附近的美食街，以平价小吃和学生餐饮为主，是体验校园周边美食的好去处。",
+        "icon": "icon/zhedafuluojie.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "shiwukuixiang",
+        "name": "十五奎巷",
+        "latitude": 30.237438,
+        "longitude": 120.170947,
+        "tags": ["杭州小吃"],
+        "description": "杭州老城区的历史街巷，聚集了多家本地小吃店和传统手工作坊，适合漫步品尝美食。",
+        "icon": "icon/shiwukuixiang.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "yanggongdi",
+        "name": "西湖杨公堤",
+        "latitude": 30.239869,
+        "longitude": 120.13272,
+        "tags": ["晴天"],
+        "description": "西湖西侧的景观大道，与苏堤、白堤并称“西湖三堤”，晴天时湖光山色相映，适合骑行游览。",
+        "icon": "icon/yanggongdi.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "longjingcun",
+        "name": "龙井村茶园",
+        "latitude": 30.218481,
+        "longitude": 120.106683,
+        "tags": ["晴天"],
+        "description": "龙井茶的核心产区，村落四周茶园环绕，晴天时茶香四溢，可体验采茶和品茶活动。",
+        "icon": "icon/longjingcun.png",
+        "openHours": "全天开放"
+    },
+    {
+        "id": "baitagongyuan",
+        "name": "白塔公园绿皮火车",
+        "latitude": 30.199481,
+        "longitude": 120.141759,
+        "tags": ["晴天"],
+        "description": "以铁路文化为主题的公园，保留老式白塔和绿皮火车，晴天时适合拍照打卡，感受怀旧氛围。",
+        "icon": "icon/baitagongyuan.png",
+        "openHours": "8:00-17:00"
+    },
+    {
+        "id": "xiaoshuguan",
+        "name": "晓书馆",
+        "latitude": 30.364809,
+        "longitude": 120.032134,
+        "tags": ["雨天"],
+        "description": "位于良渚文化村的公益图书馆，由安藤忠雄设计，雨天时自然光透过天窗洒入，阅读氛围宁静。",
+        "icon": "icon/xiaoshuguan.png",
+        "openHours": "10:00-20:00（周一闭馆）"
+    },
+    {
+        "id": "nansongshufang",
+        "name": "南宋书房",
+        "latitude": 30.238257,
+        "longitude": 120.17157,
+        "tags": ["雨天"],
+        "description": "位于南宋御街的文化空间，融合阅读、文创和茶文化，雨天时可在此静心阅读，感受历史文脉。",
+        "icon": "icon/nansongshufang.png",
+        "openHours": "10:00-22:00"
+    },
+    {
+        "id": "tianmulinuangwushudian",
+        "name": "天目里茑屋书店",
+        "latitude": 30.265921,
+        "longitude": 120.099011,
+        "tags": ["雨天"],
+        "description": "位于天目里园区的日式书店，设计风格简约，雨天时在店内挑选书籍或咖啡休憩，享受慢时光。",
+        "icon": "icon/tianmulinuangwushudian.png",
+        "openHours": "10:00-22:00"
+    },
+    {
+        "id": "fuyuanju",
+        "name": "福缘居",
+        "latitude": 30.238945,
+        "longitude": 120.17666,
+        "tags": ["杭帮菜"],
+        "description": "河坊街附近的老字号餐馆，以地道杭帮菜闻名，推荐菜品有红烧肉、叫化鸡等，口味正宗。",
+        "icon": "icon/fuyuanju.png",
+        "openHours": "11:00-14:00，17:00-21:00"
+    },
+    {
+        "id": "guiyushanfang",
+        "name": "桂语山房",
+        "latitude": 30.218958,
+        "longitude": 120.130115,
+        "tags": ["杭帮菜"],
+        "description": "位于西湖边的高端杭帮菜馆，环境雅致，菜品精致，将传统杭帮菜与现代烹饪技艺结合。",
+        "icon": "icon/guiyushanfang.png",
+        "openHours": "11:00-14:00，17:00-21:30"
+    },
+    {
+        "id": "fanglaodamian",
+        "name": "方老大面",
+        "latitude": 30.235695,
+        "longitude": 120.176152,
+        "tags": ["杭帮菜"],
+        "description": "杭州人气面馆，以片儿川和茄汁拌川闻名，面条劲道，浇头丰富，深受本地居民喜爱。",
+        "icon": "icon/fanglaodamian.png",
+        "openHours": "6:30-14:00（售完即止）"
+    },
+    {
+        "id": "jinzhu28",
+        "name": "金猪28",
+        "latitude": 30.262217,
+        "longitude": 120.160761,
+        "tags": ["杭帮菜"],
+        "description": "武林商圈的创意杭帮菜馆，菜品融合传统与创新，环境时尚，适合年轻人聚餐，性价比高。",
+        "icon": "icon/jinzhu28.png",
+        "openHours": "11:00-14:00，17:00-21:00"
+    },
+    {
+        "id": "charencun",
+        "name": "茶人村",
+        "latitude": 30.247148,
+        "longitude": 120.160011,
+        "tags": ["杭帮菜"],
+        "description": "龙井村附近的杭帮菜馆，主打茶宴和农家菜，菜品融入茶叶元素，可边用餐边欣赏茶园风光。",
+        "icon": "icon/charencun.png",
+        "openHours": "10:30-21:30"
+    },
+    {
+        "id": "zhaofusichu",
+        "name": "赵府私厨",
+        "latitude": 30.240555,
+        "longitude": 120.168733,
+        "tags": ["杭帮菜"],
+        "description": "西湖边的私房菜馆，提供定制化杭帮菜服务，菜品精致，环境私密，适合商务宴请和特色体验。",
+        "icon": "icon/zhaofusichu.png",
+        "openHours": "11:00-14:00，17:00-21:00"
+    },
+    {
+        "id": "louwailou",
+        "name": "楼外楼",
+        "latitude": 30.250224,
+        "longitude": 120.141938,
+        "tags": ["杭帮菜"],
+        "description": "杭州历史最悠久的老字号餐馆之一，主打传统杭帮菜，西湖醋鱼、东坡肉等菜品享誉中外。",
+        "icon": "icon/louwailou.png",
+        "openHours": "11:00-14:00，17:00-20:30"
+    },
+    {
+        "id": "zhiweiguan",
+        "name": "知味观",
+        "latitude": 30.251821,
+        "longitude": 120.164013,
+        "tags": ["杭帮菜"],
+        "description": "杭州著名的餐饮老字号，以小吃和杭帮菜并重，品种丰富，是体验杭州饮食文化的必去之处。",
+        "icon": "icon/zhiweiguan.png",
+        "openHours": "10:30-21:30"
+    },
+    {
+        "id": "hangzhoujiujia",
+        "name": "杭州酒家",
+        "latitude": 30.251744,
+        "longitude": 120.164014,
+        "tags": ["杭帮菜"],
+        "description": "始于1921年的老字号餐馆，以杭帮菜为主，菜品地道，价格亲民，深受本地食客和游客喜爱。",
+        "icon": "icon/hangzhoujiujia.png",
+        "openHours": "11:00-14:00，17:00-21:00"
+    },
+    {
+        "id": "cycleandcycle",
+        "name": "Cycle&Cycle",
+        "latitude": 30.266608,
+        "longitude": 120.168007,
+        "tags": ["面包/蛋糕"],
+        "description": "杭州知名面包店，主打日式面包和欧式面包，使用优质原料，面包口感松软，款式新颖。",
+        "icon": "icon/cycleandcycle.png",
+        "openHours": "8:00-21:00"
+    },
+    {
+        "id": "chocolate monster",
+        "name": "巧克怪兽",
+        "latitude": 30.267068,
+        "longitude": 120.168335,
+        "tags": ["面包/蛋糕"],
+        "description": "以巧克力甜点为特色的甜品店，巧克力口感浓郁，蛋糕造型精致，是巧克力爱好者的天堂。",
+        "icon": "icon/chocolatemonster.png",
+        "openHours": "10:00-22:00"
+    },
+    {
+        "id": "fermentationcanteen",
+        "name": "发酵食堂",
+        "latitude": 30.267063,
+        "longitude": 120.168261,
+        "tags": ["面包/蛋糕"],
+        "description": "主打天然发酵面包的店铺，面包口味独特，有多种杂粮和创意口味，注重健康与口感。",
+        "icon": "icon/fermentationcanteen.png",
+        "openHours": "8:30-20:30"
+    },
+    {
+        "id": "lusong",
+        "name": "鹿松",
+        "latitude": 30.268659,
+        "longitude": 120.138648,
+        "tags": ["面包/蛋糕"],
+        "description": "文艺风格的面包店，面包款式简约而不简单，注重食材本味，适合喜欢清淡口味的顾客。",
+        "icon": "icon/lusong.png",
+        "openHours": "8:00-20:00"
+    },
+    {
+        "id": "n2",
+        "name": "N²",
+        "latitude": 30.262875,
+        "longitude": 120.158725,
+        "tags": ["面包/蛋糕"],
+        "description": "高端甜品店，以分子料理手法制作创意甜品，造型新颖，口感丰富，适合追求独特体验的食客。",
+        "icon": "icon/n2.png",
+        "openHours": "10:00-22:00"
+    },
+    {
+        "id": "septemberlife",
+        "name": "九月生活",
+        "latitude": 30.203322,
+        "longitude": 120.189998,
+        "tags": ["面包/蛋糕"],
+        "description": "杭州本地连锁面包店，以传统糕点和现烤面包为主，价格亲民，是日常购买面包的便利选择。",
+        "icon": "icon/septemberlife.png",
+        "openHours": "6:30-21:30"
+    },
+    {
+        "id": "hubin88animeblock",
+        "name": "湖滨88动漫街区",
+        "latitude": 30.25471,
+        "longitude": 120.16245,
+        "tags": ["二次元"],
+        "description": "杭州核心商圈的动漫主题街区，汇聚动漫周边、手办模型和cosplay相关店铺，是二次元爱好者的聚集地。",
+        "icon": "icon/hubin88animeblock.png",
+        "openHours": "10:00-22:00"
+    },
+    {
+        "id": "chinacartoonmuseum",
+        "name": "中国动漫博物馆",
+        "latitude": 30.167682,
+        "longitude": 120.207312,
+        "tags": ["二次元"],
+        "description": "国家级动漫专题博物馆，展示中国动漫的发展历程和优秀作品，设有互动体验区，适合各年龄层参观。",
+        "icon": "icon/chinacartoonmuseum.png",
+        "openHours": "9:30-16:30（周一闭馆）"
+    }
+]

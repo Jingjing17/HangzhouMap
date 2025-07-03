@@ -1,0 +1,23 @@
+[
+  {"id": "春", "name": "春", "category": "季节", "color": "#FF7F50"},
+  {"id": "夏", "name": "夏", "category": "季节", "color": "#FFB347"},
+  {"id": "秋", "name": "秋", "category": "季节", "color": "#D2691E"},
+  {"id": "冬", "name": "冬", "category": "季节", "color": "#5F9EA0"},
+
+  {"id": "博物馆", "name": "博物馆", "category": "类型", "color": "#6495ED"},
+  {"id": "美术馆", "name": "美术馆", "category": "类型", "color": "#6A5ACD"},
+  {"id": "citywalk", "name": "citywalk", "category": "类型", "color": "#4682B4"},
+  {"id": "自然", "name": "自然", "category": "类型", "color": "#3CB371"},
+  {"id": "古风/历史", "name": "古风/历史", "category": "类型", "color": "#8B4513"},
+  {"id": "拍摄", "name": "拍摄", "category": "类型", "color": "#FF69B4"},
+
+  {"id": "杭州小吃", "name": "杭州小吃", "category": "美食", "color": "#FFA500"},
+  {"id": "杭帮菜", "name": "杭帮菜", "category": "美食", "color": "#FF8C00"},
+  {"id": "面包/蛋糕", "name": "面包/蛋糕", "category": "美食", "color": "#FFB6C1"},
+
+  {"id": "晴天", "name": "晴天", "category": "天气", "color": "#FFD700"},
+  {"id": "雨天", "name": "雨天", "category": "天气", "color": "#1E90FF"},
+
+  {"id": "二次元", "name": "二次元", "category": "风格", "color": "#DA70D6"},
+  {"id": "购物休闲", "name": "购物休闲", "category": "类型", "color": "#20B2AA"}
+]
