@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>杭城万花筒 · 路线规划</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <style>
+    body { 
+      margin: 0;
+      font-family: "微软雅黑";
+      background: #f8fbff;
+    }
+    
+    #mainMap {
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    #tagPanel, #routePanel, #planPanel {
+      position: absolute;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    
+    #tagPanel {
+      top: 10px;
+      left: 10px;
+      max-height: 180px;
+      overflow-y: auto;
+      width: 320px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    #routePanel {
+      bottom: 10px;
+      left: 10px;
+    }
+    
+    #planPanel {
+      top: 10px;
+      right: 10px;
+      width: 300px;
+    }
+    
+    #tagPanel button, #routePanel button {
+      padding: 6px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 16px;
+      opacity: 0.6;
+      background-color: #666;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    button.active {
+      opacity: 1;
+      transform: scale(1.1);
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    }
+    
+    .spot-block {
+      background: #e3f2fd;
+      padding: 8px;
+      border-radius: 5px;
+      cursor: grab;
+      border: 1px solid #90caf9;
+      margin-bottom: 6px;
+      user-select: none;
+    }
+	
+	#legendPanel {
+	  position: absolute;
+	  right: 10px;
+	  bottom: 10px;
+	  background: rgba(255,255,255,0.95);
+	  padding: 10px;
+	  border-radius: 8px;
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	  font-size: 14px;
+	  font-family: "微软雅黑";
+	  line-height: 1.8;
+	  z-index: 100;
+	}
+	#legendPanel div {
+	  display: flex;
+	  align-items: center;
+	  gap: 6px;
+	}
+	#legendPanel span {
+	  display: inline-block;
+	  width: 16px;
+	  height: 16px;
+	  border-radius: 4px;
+	  border: 1px solid #999;
+	}
+
+  </style>
+</head>
+<body>
+  <div id="mainMap"></div>
+  <div id="tagPanel">加载标签中...</div>
+  <div id="routePanel">加载路线中...</div>
+  <div id="planPanel">
+	<h3>个性化定制路线</h3>
+    <h4>点击地图中的图标规划路线</h4>
+	<h4>拖动下方景点名字方块可以交换游览顺序</h4>
+    <div id="spotBlocks" class="sortable-list"></div>
+    <button onclick="generateCustomRoute()">生成路线</button>
+    <button onclick="clearSpotBlocks()">清空路线</button>
+  </div>
+  <div id="legendPanel">
+    <strong>交通方式图例：</strong>
+    <div><span style="background-color:#4caf50"></span>步行</div>
+    <div><span style="background-color:#ff9800"></span>公交</div>
+    <div><span style="background-color:#673ab7"></span>地铁</div>
+    <div><span style="background-color:#f44336"></span>自驾/打车</div>
+  </div>
+
+  <script>
+    const AMapKey = '2ab6515361d3bb3f901bb1acd33e61f5';
+    let myChart, allSpots = [], allRoutes = [], selectedTags = new Set(), selectedRouteId = null;
+
+    // 注册地图后初始化
+    fetch('./data/hangzhou.geoJson')
+      .then(r => r.json())
+      .then(geo => {
+        echarts.registerMap('hangzhou', geo);
+        myChart = echarts.init(document.getElementById('mainMap'));
+        loadData();
+      })
+      .catch(e => alert('地图加载失败:' + e));
+	  
+	// 加载景点、标签、推荐路线
+    function loadData() {
+      Promise.all([
+        fetch('./data/spots.json').then(r => r.json()),
+        fetch('./data/tags.json').then(r => r.json()),
+        fetch('./data/routes.json').then(r => r.json())
+      ]).then(([spots, tags, routes]) => {
+        allSpots = spots;
+        allRoutes = routes;
+        renderTags(tags);         // 渲染标签按钮
+        renderRouteList();        // 渲染推荐路线
+        renderMap();              // 渲染景点图标
+
+        new Sortable(document.getElementById('spotBlocks'), { animation: 150 });// 启用拖动排序
+      }).catch(e => alert('数据加载失败:' + e));
+    }
+
+    const transportColors = {
+      "步行": "#4caf50",
+      "公交": "#ff9800",
+      "地铁": "#673ab7",
+      "自驾/打车": "#f44336",
+      "默认": "#666"
+    };
+	
+	// 标签渲染函数：点击筛选相关景点
+    function renderTags(tags) {
+      const p = document.getElementById('tagPanel');
+      p.innerHTML = '';
+      tags.forEach(tag => {
+        const b = document.createElement('button');
+        b.textContent = tag.name;
+        b.style.backgroundColor = tag.color || '#666';
+        b.dataset.id = tag.id;
+        b.onclick = () => {
+		  // 切换标签状态
+          b.classList.toggle('active');
+          if (selectedTags.has(tag.id)) {
+            selectedTags.delete(tag.id);
+          } else {
+            selectedTags.add(tag.id);
+          }
+		  // 清除其他选中状态
+          selectedRouteId = null;
+          document.querySelectorAll('#routePanel button').forEach(x => x.classList.remove('active'));
+          clearSpotBlocks();
+          renderMap();// 重新渲染地图
+        };
+        p.appendChild(b);
+      });
+    }
+	
+	// 推荐路线列表渲染
+    function renderRouteList() {
+      const p = document.getElementById('routePanel');
+      p.innerHTML = '<strong>推荐路线：</strong> ';
+      allRoutes.forEach(route => {
+        const b = document.createElement('button');
+        b.textContent = route.name;
+        b.onclick = async () => {
+		  // 切换选中状态
+          if (selectedRouteId === route.id) {
+            selectedRouteId = null;
+            document.querySelectorAll('#routePanel button').forEach(x => x.classList.remove('active'));
+            renderMap();
+          } else {
+            selectedRouteId = route.id;
+            selectedTags.clear();
+            document.querySelectorAll('#tagPanel button').forEach(x => x.classList.remove('active'));
+            document.querySelectorAll('#routePanel button').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            clearSpotBlocks();
+            await calculateAndRenderRoute(route);// 路线路径规划并绘制
+          }
+        };
+        p.appendChild(b);
+      });
+    }
+	
+	// 地图渲染：根据景点和路径渲染 icon、路径、交通标签
+    function renderMap(linesData = [], segmentLabels = [], routeSpotNames = []) {
+      myChart.clear();
+	  // 筛选景点：根据选中路线或标签
+      let filteredSpots = selectedRouteId && routeSpotNames.length
+        ? allSpots.filter(s => routeSpotNames.includes(s.name))
+        : allSpots.filter(s => !selectedTags.size || [...selectedTags].every(tag => s.tags?.includes(tag)));
+
+      const series = [{
+        name: '景点',
+        type: 'scatter',
+        coordinateSystem: 'geo',
+        symbolSize: 40,
+        label: {
+          show: true,
+          formatter: '{b}',
+          position: 'bottom',
+          fontFamily: '微软雅黑',
+          fontSize: 14,
+          color: '#333',
+          backgroundColor: 'rgba(255,255,255,0.9)',
+          padding: [4, 6],
+          borderRadius: 6,
+          borderColor: '#666',
+          borderWidth: 1,
+          shadowColor: 'rgba(0,0,0,0.1)',
+          shadowBlur: 3
+        },
+        data: filteredSpots.map(s => ({
+          name: s.name,
+          value: [s.longitude, s.latitude],
+          symbol: s.icon ? 'image://' + s.icon : 'circle',
+        })),
+        z: 100
+      }];
+	  
+	  // 绘制每段路径及交通方式标签
+      linesData.forEach((line, idx) => {
+        const segColor = transportColors[segmentLabels[idx].transport] || transportColors["默认"];
+        series.push({
+          type: 'lines',
+          coordinateSystem: 'geo',
+          polyline: true,
+          effect: {
+            show: true,
+            symbol: 'arrow',
+            trailLength: 0.1,
+            symbolSize: 6,
+          },
+          lineStyle: {
+            color: segColor,
+            width: 4,
+          },
+          data: [line],
+          z: 5
+        });
+        series.push({
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          symbolSize: 1,
+          label: {
+            show: true,
+            formatter: `{a|${segmentLabels[idx].transport}}`,
+            rich: {
+              a: {
+                color: '#fff',
+                backgroundColor: segColor,
+                padding: [5, 12],
+                borderRadius: 10
+              }
+            },
+            position: 'top'
+          },
+          data: [{ value: segmentLabels[idx].center }],
+          z: 6
+        });
+      });
+	  
+	  // 配置地图项
+      myChart.setOption({
+        geo: {
+          map: 'hangzhou',
+          roam: true,
+          zoom: 10,
+          itemStyle: {
+            areaColor: '#e0f3ff',
+            borderColor: '#5ba2d3',
+          },
+          emphasis: {
+            areaColor: '#d0e3f5',
+          }
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: p => p.name || ''
+        },
+        series
+      });
+	  
+	  // 点击景点图标添加到路线中
+      myChart.off('click');
+      myChart.on('click', function (params) {
+        if (params.seriesName === '景点') {
+          const spot = allSpots.find(s => s.name === params.name);
+          if (spot) handleAddSpotToPlan(spot);
+        }
+      });
+    }
+	
+	// 为推荐路线生成并渲染路径
+    async function calculateAndRenderRoute(route) {
+      const linesData = [], segmentLabels = [];
+    
+      for (let i = 0; i < route.spots.length - 1; i++) {
+        const start = route.spots[i];
+        const end = route.spots[i + 1];
+        try {
+          const { coords, transport } = await getSmartPath(start, end);
+          if (coords.length) {
+            linesData.push({ coords });
+            segmentLabels.push({ transport, center: coords[Math.floor(coords.length / 2)] });
+          }
+        } catch (e) {
+          alert('路径规划失败：' + e);
+        }
+      }
+    
+      renderMap(linesData, segmentLabels, route.spots.map(s => s.name));
+    }
+
+
+    async function getPathCoords(seg) {
+      const { start, end, transport } = seg;
+      let type = 'driving';
+      if (transport.includes("步行")) {
+        type = 'walking';
+      } else if (transport.match(/公交|巴士/)) {
+        type = 'transit/integrated';
+      }
+
+      const url = `https://restapi.amap.com/v3/direction/${type}?origin=${start.longitude},${start.latitude}&destination=${end.longitude},${end.latitude}&key=${AMapKey}`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.status !== '1') {
+        throw new Error(data.info || '未知错误');
+      }
+
+      let steps = [];
+      if (type === 'walking' || type === 'driving') {
+        steps = data.route.paths[0].steps || [];
+      } else {
+        // transit
+        if (data.route.transits?.length) {
+          steps = data.route.transits[0].segments.flatMap(x => x.walking?.steps || []);
+        } else {
+          steps = [];
+        }
+      }
+
+      const coords = [];
+      steps.forEach(step => {
+        step.polyline.split(';').forEach(p => {
+          const [lng, lat] = p.split(',');
+          coords.push([+lng, +lat]);
+        });
+      });
+      return coords;
+    }
+
+    function handleAddSpotToPlan(spot) {
+      const container = document.getElementById('spotBlocks');
+      if ([...container.children].some(div => div.dataset.name === spot.name)) return;
+      const div = document.createElement('div');
+      div.className = 'spot-block';
+      div.textContent = spot.name;
+      div.dataset.name = spot.name;
+      container.appendChild(div);
+    }
+
+    function clearSpotBlocks() {
+      document.getElementById('spotBlocks').innerHTML = '';
+      renderMap();
+    }
+
+    async function generateCustomRoute() {
+      const names = [...document.querySelectorAll('#spotBlocks .spot-block')].map(d => d.dataset.name);
+      if (names.length < 2) return alert('请至少选择两个景点');
+      const coordsList = names.map(n => allSpots.find(s => s.name === n));
+      const linesData = [], segmentLabels = [];
+
+      for (let i = 0; i < coordsList.length - 1; i++) {
+        const start = coordsList[i];
+        const end = coordsList[i + 1];
+        try {
+          const { coords, transport } = await getSmartPath(start, end);
+          if (coords.length) {
+            linesData.push({ coords });
+            segmentLabels.push({ transport, center: coords[Math.floor(coords.length / 2)] });
+          }
+        } catch(e) {
+          alert('路径规划失败：' + e);
+        }
+      }
+      renderMap(linesData, segmentLabels, names);
+    }
+
+    function getDistance(lat1, lon1, lat2, lon2) {
+      const toRad = deg => deg * Math.PI / 180;
+      const R = 6371000;
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+      const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon/2)**2;
+      return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    }
+	
+	// 智能路径规划：优先步行、公交，失败则兜底驾车
+    async function getSmartPath(start, end) {
+      const dist = getDistance(start.latitude, start.longitude, end.latitude, end.longitude);
+
+      if (dist < 2000) {
+        // 小于2公里优先步行
+        const coords = await getPathCoords({ start, end, transport: "步行" });
+        return { coords, transport: "步行" };
+      }
+
+      // 优先尝试公交（含地铁）
+      try {
+        const transitUrl = `https://restapi.amap.com/v3/direction/transit/integrated?origin=${start.longitude},${start.latitude}&destination=${end.longitude},${end.latitude}&city=杭州&key=${AMapKey}`;
+        const transitRes = await fetch(transitUrl);
+        const transitData = await transitRes.json();
+
+        if (transitData.status === '1' && transitData.route.transits?.length) {
+          const firstTransit = transitData.route.transits[0];
+          const hasSubway = firstTransit.segments.some(s => s.bus?.buslines?.some(line => line.type === '地铁线路'));
+
+          const coords = await extractTransitCoords(firstTransit);
+          return {
+            coords,
+            transport: hasSubway ? "地铁" : "公交"
+          };
+        }
+      } catch(e) {
+        // 公交失败，不做提示，继续尝试驾车
+        console.warn('公交路径规划失败，尝试驾车', e);
+      }
+
+      // 驾车兜底
+      const coords = await getPathCoords({ start, end, transport: "驾车" });
+      return {
+        coords,
+        transport: "自驾/打车"
+      };
+    }
+
+    async function extractTransitCoords(transit) {
+      const coords = [];
+      for (const seg of transit.segments) {
+        if (seg.walking?.steps) {
+          seg.walking.steps.forEach(step => {
+            step.polyline.split(';').forEach(p => {
+              const [lng, lat] = p.split(',');
+              coords.push([+lng, +lat]);
+            });
+          });
+        }
+        if (seg.bus?.buslines?.length) {
+          seg.bus.buslines.forEach(line => {
+            line.polyline.split(';').forEach(p => {
+              const [lng, lat] = p.split(',');
+              coords.push([+lng, +lat]);
+            });
+          });
+        }
+      }
+      return coords;
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

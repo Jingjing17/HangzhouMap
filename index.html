@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>杭城万花筒 · 首页</title>
+  <style>
+    html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          background-color: #fdeacb;
+          overflow: hidden;
+          position: relative;
+        }
+    
+        .bg {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: auto;
+          transform: translateY(-50%);
+        }
+
+    .title-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      height: 270px;
+      transform: translate(-50%, -50%);
+      animation: pulse 3s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0%   { transform: translate(-50%, -50%) scale(1); }
+      50%  { transform: translate(-50%, -50%) scale(1.08); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .title-image:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+	<img src="./images/bg.png" alt="背景图" class="bg">
+  <img src="./images/title.png" alt="杭城万花筒标题" class="title-image" onclick="location.href='map.html'">
+</body>
+</html>
